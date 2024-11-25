@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - login &amp; signup form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+    <div class="title-text">
+        <div class="title login">Login Form</div>
+        <div class="title signup">Signup Form</div>
+    </div>
+    <div class="form-container">
+        <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Signup</label>
+            <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">
+            <form action="javascript:void(0);" class="login" id="login-form" onsubmit="return validateLogin()">
+                <div class="field">
+                    <input type="text" placeholder="Email Address" id="login-email" required>
+                </div>
+                <div class="field">
+                    <input type="password" placeholder="Password" id="login-password" required>
+                </div>
+                <div class="pass-link"><a href="#">Forgot password?</a></div>
+                <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Login">
+                </div>
+                <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+            </form>
+            <form action="homepage.html" class="signup">
+                <div class="field">
+                    <input type="text" placeholder="Email Address" required>
+                </div>
+                <div class="field">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="field">
+                    <input type="password" placeholder="Confirm password" required>
+                </div>
+                <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Signup">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- partial -->
+<script>
+    function validateLogin() {
+        // Predefined admin credentials
+        const adminEmail = "admin@example.com";
+        const adminPassword = "admin123";
+
+        // Get user input
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+
+        // Check if the user is an admin
+        if (email === adminEmail && password === adminPassword) {
+            // Redirect directly to the dashboard
+            window.location.href = "admin.html"; // Change this to your dashboard URL
+        } else {
+            // For non-admin users, redirect to the homepage
+            window.location.href = "homepage.html"; // Change this to your homepage URL
+        }
+        return false; // Prevent default form submission
+    }
+</script>
+</body>
+</html>

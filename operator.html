@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator - JO&WO</title>
+    <link rel="stylesheet" href="style2.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding-top: 80px; /* Adjust to avoid overlap with navbar */
+            margin: 0;
+        }
+
+        .job-detail {
+            max-width: 800px;
+            margin: 40px auto; /* Center the section */
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center text */
+        }
+
+        .job-detail h2 {
+            font-size: 28px;
+            color: #023047; /* Match branding */
+            margin-bottom: 20px; /* Add space below title */
+        }
+
+        .job-detail img {
+            width: 100%; /* Make image responsive */
+            max-width: 400px; /* Set a max width */
+            border-radius: 8px; /* Add border radius */
+            margin: 20px 0; /* Add space around image */
+        }
+
+        .job-detail p {
+            font-size: 16px;
+            line-height: 1.6; /* Improve readability */
+            margin: 10px 0; /* Add space between paragraphs */
+        }
+
+        .job-detail .section-title {
+            font-size: 22px;
+            color: #023047; /* Match branding */
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: left; /* Align section titles to the left */
+        }
+
+        .job-detail .details {
+            text-align: left; /* Align detail text to the left */
+            margin: 0 0 20px 0; /* Add bottom margin */
+        }
+
+        .apply-section {
+            text-align: center; /* Center text in apply section */
+            margin-top: 30px; /* Add margin above section */
+        }
+
+        .apply-section p {
+            margin: 5px 0; /* Add space between lines */
+        }
+
+        .location-select {
+            margin-top: 10px; /* Add margin above select */
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            width: 100%; /* Full width */
+            max-width: 300px; /* Set a max width for select */
+            margin: 10px auto; /* Center select */
+        }
+
+        .apply-btn, .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #023047;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .apply-btn:hover, .back-btn:hover {
+            background-color: #e63946; /* Change color on hover */
+        }
+
+        footer {
+            text-align: center; /* Center footer text */
+            padding: 20px;
+            background-color: #1b1b2f; /* Match navbar color */
+            color: #fff;
+            position: relative; /* Ensure footer is at the bottom */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">JO&WO</div>
+        <ul class="nav-links">
+            <li><a href="./homepage.html">Home</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./career.html">Careers</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="job-detail">
+        <h2>Operator</h2>
+        <img src="productmanager.png" alt="Operator" />
+        <p class="details"><strong>Job Overview:</strong> Responsible for operating the entire product life cycle, from ideation to launch and post-launch maintenance.</p>
+        <p class="details"><strong>Open Positions:</strong> 10</p>
+        <p class="details"><strong>Location:</strong> <span id="selected-location">New York, NY</span></p> <!-- Display selected location -->
+
+        <div class="section-title">Responsibilities:</div>
+        <p class="details">
+            - Manage the product development process from start to finish.<br>
+            - Collaborate with cross-functional teams to ensure product success.<br>
+            - Monitor product performance and iterate based on feedback.<br>
+            - Conduct market research to identify customer needs and trends.<br>
+        </p>
+
+        <div class="section-title">Qualifications:</div>
+        <p class="details">
+            - Bachelor’s degree in a relevant field.<br>
+            - 2+ years of experience in product management or related roles.<br>
+            - Strong analytical and problem-solving skills.<br>
+            - Excellent communication and teamwork abilities.<br>
+        </p>
+
+        <div class="section-title">Benefits:</div>
+        <p class="details">
+            - Competitive salary and performance-based bonuses.<br>
+            - Health, dental, and vision insurance.<br>
+            - Flexible work hours and remote work options.<br>
+            - Professional development opportunities.<br>
+        </p>
+
+        <div class="apply-section">
+            <div class="section-title">How to Apply:</div>
+            <p>To apply for this position, please send your resume and cover letter to:</p>
+            <p><strong>nurhidayahaslarieffendy@gmail.com</strong></p>
+            <p>Alternatively, you can apply online through our <a href="./career.html">careers page</a>.</p>
+            <p>Select your preferred location:</p>
+            <select class="location-select" id="location-select">
+                <option value="New York, NY">SHAH ALAM</option>
+                <option value="Los Angeles, CA">TELOK PANGLIMA GARANG</option>
+            </select>
+            <a href="#" class="apply-btn" id="apply-now">Apply Now</a> <!-- Set href to "#" to avoid default action -->
+        </div>
+
+        <p>Become part of our innovative team and contribute to product development!</p>
+    </section>
+
+    <footer>
+        <p>© 2016 JO&WO. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to update selected location display
+        const locationSelect = document.getElementById('location-select');
+        const selectedLocationDisplay = document.getElementById('selected-location');
+
+        locationSelect.addEventListener('change', () => {
+            selectedLocationDisplay.textContent = locationSelect.value;
+        });
+
+        // Functionality for Apply Now button
+        const applyBtn = document.getElementById('apply-now');
+        applyBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            const selectedLocation = locationSelect.value;
+            // Redirect to submission page with selected location as a query parameter
+            window.location.href = `submission.html?location=${encodeURIComponent(selectedLocation)}`;
+        });
+    </script>
+</body>
+</html>
